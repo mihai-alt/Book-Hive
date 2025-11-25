@@ -1,0 +1,46 @@
+{
+  "name": "BookHive - Share Your Thoughts",
+  "short_name": "BookHive",
+  "description": "Join BookHive, the revolutionary platform for book lovers to connect, share, and discover new literary adventures.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a87db",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons8-bee-100.png",
+      "sizes": "100x100",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["books", "social", "lifestyle"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Browse Books",
+      "short_name": "Books",
+      "description": "Browse available books in your area",
+      "url": "/books",
+      "icons": [
+        {
+          "src": "/icons8-bee-100.png",
+          "sizes": "100x100"
+        }
+      ]
+    },
+    {
+      "name": "Find Users",
+      "short_name": "Users",
+      "description": "Connect with book lovers nearby",
+      "url": "/users",
+      "icons": [
+        {
+          "src": "/icons8-bee-100.png",
+          "sizes": "100x100"
+        }
+      ]
+    }
+  ]
+}

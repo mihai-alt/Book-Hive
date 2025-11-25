@@ -1,0 +1,47 @@
+import express from 'express';
+import {
+  sendMessage,
+  sendFileMessage,
+  getConversations,
+  getConversationWithUser,
+  getReceivedMessages,
+  deleteMessage,
+  clearConversation,
+  blockUser,
+  unblockUser,
+  getBlockedUsers,
+  addReaction,
+} from '../controllers/messageController.js';
+import { protect } from '../middleware/auth.js';
+import upload from '../middleware/upload.js';
+
+const router = express.Router();
+
+// This route gets all conversations for the logged-in user
+router.get('/conversations', protect, getConversations);
+router.get('/with/:userId', protect, getConversationWithUser);
+
+// This route gets received messages for notifications
+router.get('/received', protect, getReceivedMessages);
+
+// Block/unblock user routes
+router.post('/block/:userId', protect, blockUser);
+router.post('/unblock/:userId', protect, unblockUser);
+router.get('/blocked', protect, getBlockedUsers);
+
+// This route sends a message to a specific user
+router.post('/send/:recipientId', protect, sendMessage);
+
+// This route sends a file message to a specific user
+router.post('/send-file/:recipientId', protect, upload.single('file'), sendFileMessage);
+
+// This route adds/removes a reaction to a message
+router.post('/:messageId/react', protect, addReaction);
+
+// This route deletes a message
+router.delete('/:messageId', protect, deleteMessage);
+
+// This route clears an entire conversation
+router.delete('/conversation/:conversationId', protect, clearConversation);
+
+export default router;

@@ -1,0 +1,40 @@
+User-agent: *
+Allow: /
+
+# Allow all search engines to crawl the site
+Allow: /books
+Allow: /events
+Allow: /about
+Allow: /contact
+Allow: /terms
+Allow: /privacy
+Allow: /pricing
+Allow: /team
+
+# Disallow private/admin areas
+Disallow: /admin-dashboard-secure
+Disallow: /profile
+Disallow: /my-books
+Disallow: /messages
+Disallow: /borrow-requests
+Disallow: /friends
+Disallow: /blocked-users
+Disallow: /organizer/dashboard
+Disallow: /api/
+
+# Disallow authentication pages
+Disallow: /login
+Disallow: /register
+Disallow: /forgot-password
+Disallow: /verify-email
+Disallow: /auth/
+
+# Allow specific user profiles (for SEO)
+Allow: /users/
+Allow: /profile/
+
+# Sitemap location
+Sitemap: https://bookhive.vercel.app/sitemap.xml
+
+# Crawl delay (be respectful)
+Crawl-delay: 1
